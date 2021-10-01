@@ -21,5 +21,6 @@
         </form>
         <p>${errormessage}</p>
         <p>${correctmessage}</p>
+        <a href="arithmetic">Arithmatic Calculator</a>
     </body>
 </html>

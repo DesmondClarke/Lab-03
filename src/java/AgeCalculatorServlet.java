@@ -39,23 +39,23 @@ public class AgeCalculatorServlet extends HttpServlet {
         String message = "Your age next birthday will be " + (ageInt + 1);
         
         //error checking
-        if (age == null || age.equals("")) {
+        if (age == null || age.equals(""))  {
             
             request.setAttribute("errormessage", "You must give your current age");
             
             //display the form again
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request,response);
             return;
-        }else if(age == "a") {
+        }else if(age.contains("a-zA-Z")) {
+            
+            request.setAttribute("errormessage", "You must give a number");
             
         }else {
             request.setAttribute("correctmessage", message);
         }
         
-        
-        
         getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
-
+        return;
     }
 
 }
